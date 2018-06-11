@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Card from './components/card'
 import { connect } from 'react-redux';
 import CardList from '../components/cardList';
 import Searchbox from '../components/searchbox';
@@ -7,7 +6,6 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import Scroll from '../components/scroll';
 import './App.css';
 import './index.css';
-// import { robots } from '../components/robots';
 
 import { setSearchField } from '../actions';
 
@@ -30,7 +28,7 @@ class App extends Component {
     
     console.log('check');
   }
-//   onSearchchange = (e) =>{
+//   onSearchChange = (e) =>{
 //     this.setState({
 //         searchField: e.target.value
 //     });
@@ -48,11 +46,11 @@ class App extends Component {
      (
       <div className="tc">
         <h1 className="f1">Robo Friends</h1>
-        <Searchbox searchChange={this.onSearchchange}/>
+        <Searchbox searchChange={onSearchChange}/>
         <Scroll>
-            <ErrorBoundary>
-              <CardList robots={filterRobots}/>
-            </ErrorBoundary>
+          <ErrorBoundary>
+            <CardList robots={filterRobots}/>
+          </ErrorBoundary>
         </Scroll>
       </div>
     );

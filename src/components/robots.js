@@ -58,23 +58,5 @@ export const robots = [
         name: 'Duye The Great',
         username: 'Duye',
         email: 'Sincere@april.biz'
-     },
-    //  {
-    //     id: 10, 
-    //     name: 'Leanne Graham',
-    //     username: 'Mark',
-    //     email: 'Sincere@april.biz'
-    //  },
-    //  {
-    //     id: 11, 
-    //     name: 'Leanne Graham',
-    //     username: 'Andrew',
-    //     email: 'Sincere@april.biz'
-    //  },
-    // {
-    //     id: 12, 
-    //     name: 'Leanne Graham',
-    //     username: 'Dona',
-    //     email: 'Sincere@april.biz'
-    //  }
+     }
 ]
