@@ -1,3 +1,3 @@
 # Robot Buddy Application
 
-Built utlizing ReactJS and Redux
+Built utilizing ReactJS and ReduxJS
