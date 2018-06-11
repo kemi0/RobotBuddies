@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import { Provider } from 'react-redux';
-import { creatStore } from 'redux';
+import { createStore } from 'redux';
 import { searchRobots } from './reducers';
 // import Card from './components/card'
 import registerServiceWorker from './registerServiceWorker';
@@ -12,6 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 const store = createStore(searchRobots)
 
 ReactDOM.render(
-    <App store={store} />
-    , document.getElementById('root'));
+    <Provider>
+         <App store={store} />
+    </Provider>, document.getElementById('root'));
 registerServiceWorker();
