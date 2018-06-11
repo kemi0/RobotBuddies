@@ -1,0 +1,23 @@
+{
+  "name": "robo-buddies",
+  "version": "0.1.0",
+  "desrciption": "Simple application utilizing ReactJS and ReduxJS",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "author": "JeanPaul Olukemi",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kemi0/RobotBuddies.git"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
