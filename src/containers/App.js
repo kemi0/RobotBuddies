@@ -12,20 +12,8 @@ import { setSearchField, requestRobots } from '../actions';
 
 
 class App extends Component {
-  // constructor(props){
-  //   super(props);
-    
-  //   this.state = {
-  //     robots: [] ,
-  //     // searchfield: ''
-  //   }
-  // }
   componentDidMount() {
-    this.props.onRequestRobots();
-    // fetch('https://jsonplaceholder.typicode.com/users')
-    //   .then(response => response.json())
-    //   .then(users => this.setState({robots: users}))
-    
+    this.props.onRequestRobots(); 
    }
 
 

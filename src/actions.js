@@ -4,9 +4,6 @@ import { CHANGE_SEARCH_FIELD,
     REQUEST_ROBOTS_FAILED
 } from './constants';
 
-// fetch('')
-    //   .then(response => response.json())
-    //   .then(users => this.setState({robots: users}))
 
 export const setSearchField = (text) => ({
         type: CHANGE_SEARCH_FIELD,
