@@ -7,40 +7,35 @@ import Scroll from '../components/scroll';
 import './App.css';
 import './index.css';
 
-import { setSearchField } from '../actions';
+import { setSearchField, requestRobots } from '../actions';
 
 
 
 class App extends Component {
-  constructor(props){
-    super(props);
+  // constructor(props){
+  //   super(props);
     
-    this.state = {
-      robots: [] ,
-      // searchfield: ''
-    }
-  }
+  //   this.state = {
+  //     robots: [] ,
+  //     // searchfield: ''
+  //   }
+  // }
   componentDidMount() {
-    // console.log('C.didmount',this.props.store.getState());
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => this.setState({robots: users}))
+    this.props.onRequestRobots();
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(users => this.setState({robots: users}))
     
-    console.log('check');
-  }
-//   onSearchChange = (e) =>{
-//     this.setState({
-//         searchField: e.target.value
-//     });
-//  }
+   }
+
 
   render() {
-    const { robots } = this.state;
-    const {searchField, onSearchChange } = this.props;
+    const { searchField, onSearchChange, robots, isPending } = this.props;
+   
     const filterRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })
-    return !robots.length ?
+    return isPending ?
      <h1>Loading...</h1>:
     
      (
@@ -58,12 +53,16 @@ class App extends Component {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchChange: (e) => dispatch(setSearchField(e.target.value))
+    onSearchChange: (e) => dispatch(setSearchField(e.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
  }
 }
 const mapStateToProps = state => {
   return {
-      searchField: state.searchField
+      searchField: state.searchRobots.searchField,
+      robots: state.requestRobots.robots,
+      isPending: state.requestRobots.isPending,
+      error: state.requestRobots.error
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
